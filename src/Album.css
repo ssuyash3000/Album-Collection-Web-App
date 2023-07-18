@@ -1,0 +1,16 @@
+.album {
+  border: solid 2px red;
+  max-height: 30%;
+  max-width: 20%;
+  min-width: 20%;
+  min-height: 30%;
+  margin: 5px;
+  text-align: right;
+  color: antiquewhite;
+  background-color: black;
+  padding: 1%;
+}
+.albumdetails {
+  padding: 5%;
+  text-align: left;
+}
