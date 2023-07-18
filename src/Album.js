@@ -8,7 +8,10 @@ function Album(props) {
         <h4> PhotoNo - {photoNo} </h4>
         Title - {title}
       </div>
-      <button>Delete</button>
+      <div className="btn-ctn">
+        <button>Update</button>
+        <button>Delete</button>
+      </div>
     </div>
   );
 }

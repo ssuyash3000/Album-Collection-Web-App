@@ -14,3 +14,8 @@
   padding: 5%;
   text-align: left;
 }
+.btn-ctn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
