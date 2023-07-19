@@ -8,6 +8,7 @@ function Navbar() {
         <li>
           <Link to="/">Home</Link>
         </li>
+        <h1>Album App</h1>
         <li>
           <Link to="/createAlbum">Create Album</Link>
         </li>

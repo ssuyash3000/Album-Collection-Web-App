@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Album from "./Album";
 import "./AlbumContainer.css";
 
@@ -10,12 +9,15 @@ function AlbumContainer(props) {
   } else {
     return (
       <div className="AlbumContainer">
-        {state.map((currAlbum) => (
+        {state.map((currAlbum, index) => (
           <Album
+            state={state}
+            setState={setState}
             albumUser={currAlbum.userId}
             photoNo={currAlbum.id}
+            pos={index + 1}
             title={currAlbum.title}
-            key={currAlbum.id}
+            key={index}
           />
         ))}
       </div>
