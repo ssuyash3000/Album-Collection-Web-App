@@ -1,4 +1,6 @@
 import "./Album.css";
+import { Link } from "react-router-dom";
+
 function Album(props) {
   const { photoNo, title, albumUser, state, setState, pos } = props;
   const handleDelete = (e) => {
@@ -10,6 +12,7 @@ function Album(props) {
     });
     setState(newState);
   };
+
   return (
     <div className="album">
       <div className="albumdetails">
@@ -18,12 +21,16 @@ function Album(props) {
         Title - {title}
       </div>
       <div className="btn-ctn">
-        <button id="update" data-index={pos}>
-          Update
-        </button>
-        <button id="delete" data-index={pos} onClick={handleDelete}>
-          Delete
-        </button>
+        <Link to={`/update-album/${pos - 1}`}>
+          <button id="update" data-index={pos}>
+            Update
+          </button>
+        </Link>
+        <Link to="/">
+          <button id="delete" data-index={pos} onClick={handleDelete}>
+            Delete
+          </button>
+        </Link>
       </div>
     </div>
   );

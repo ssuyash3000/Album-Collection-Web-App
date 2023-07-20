@@ -14,12 +14,12 @@
   padding: 5%;
   text-align: left;
 }
-.btn-ctn {
+btn-ctn {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.btn-ctn button {
+btn-ctn button {
   margin-top: 3%;
   height: 33px;
   width: 30%;
@@ -33,6 +33,8 @@
 }
 #update {
   background-color: rgb(88, 198, 234);
+
+  width: 75px;
 }
 #update:hover {
   background-color: rgb(44, 91, 107);
@@ -42,6 +44,6 @@
   background-color: lightcoral;
 }
 #delete:hover {
-  background-color: red;
+  background-color: rgb(151, 80, 80);
   text-decoration: underline;
 }

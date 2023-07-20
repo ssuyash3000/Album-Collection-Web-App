@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import AlbumContainer from "./AlbumContainer";
 import Navbar from "./Navbar";
 import CreateAlbum from "./CreateAlbum";
+import UpdateAlbum from "./UpdateAlbum";
 function App() {
   const [state, setState] = useState([]);
   useEffect(() => {
@@ -33,6 +34,10 @@ function App() {
         <Route
           path="/createAlbum"
           element={<CreateAlbum state={state} setState={setState} />}
+        />
+        <Route
+          path="/update-album/:pos"
+          element={<UpdateAlbum state={state} setState={setState} />}
         />
       </Switch>
     </div>
