@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState } from "react";
 import "./UpdateAlbum.css";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const UpdateAlbum = (props) => {
   const { pos } = useParams();
   const navigate = useNavigate();
-  console.log(props);
+  // console.log(props);
 
   let { state, setState } = props;
 
@@ -17,13 +17,26 @@ const UpdateAlbum = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(e.target);
-    console.log(newUserId);
-    console.log(newAlbumTitle);
+    // console.log(e.target);
+    // console.log(newUserId);
+    // console.log(newAlbumTitle);
     state[pos].userId = newUserId;
     state[pos].title = newAlbumTitle;
     let newState = [...state];
-    console.log(newState);
+    // console.log(newState);
+    fetch(`https://jsonplaceholder.typicode.com/albums/${pos + 1}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        title: newAlbumTitle,
+        userId: newUserId,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+
     setState(newState);
     navigate(`/`);
   };
